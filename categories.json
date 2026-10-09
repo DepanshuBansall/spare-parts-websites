@@ -1,0 +1,74 @@
+[
+  {
+    "id": "brakes-hydraulics",
+    "name": "Brakes & Hydraulics",
+    "description": "Ceramic & metallic brake pads, ventilated disc rotors, calipers, ABS wheel speed sensors, and master cylinders.",
+    "icon": "fa-circle-notch",
+    "image": "/images/valve.jpg",
+    "count": 48
+  },
+  {
+    "id": "engine-timing",
+    "name": "Engine Components & Timing",
+    "description": "Spark plugs, pistons, timing belt kits, fuel injectors, turbochargers, cylinder head gaskets, and camshafts.",
+    "icon": "fa-gears",
+    "image": "/images/sparkplug.jpg",
+    "count": 86
+  },
+  {
+    "id": "suspension-steering",
+    "name": "Suspension & Steering",
+    "description": "Shock absorber struts, lower control arms, tie rod ends, stabilizer links, steering racks, and polyurethane bushings.",
+    "icon": "fa-car-side",
+    "image": "/images/blade.jpg",
+    "count": 64
+  },
+  {
+    "id": "filtration-maintenance",
+    "name": "Filters & Maintenance",
+    "description": "Engine oil filters, high-flow air intake filters, activated carbon cabin AC filters, and fuel water separators.",
+    "icon": "fa-filter",
+    "image": "/images/filter.jpg",
+    "count": 52
+  },
+  {
+    "id": "transmission-clutch",
+    "name": "Clutch & Transmission",
+    "description": "Clutch plates, pressure plates, release bearings, dual-mass flywheels, CV axle shafts, and gearbox mounts.",
+    "icon": "fa-arrows-spin",
+    "image": "/images/hero.jpg",
+    "count": 39
+  },
+  {
+    "id": "electrical-sensors",
+    "name": "Electrical, Sensors & Lighting",
+    "description": "Bi-LED headlights, alternators, starter motors, O2 lambda sensors, ignition coils, and battery charging units.",
+    "icon": "fa-bolt",
+    "image": "/images/sensor.jpg",
+    "count": 71
+  },
+  {
+    "id": "cooling-ac",
+    "name": "Cooling & Air Conditioning",
+    "description": "Radiator assemblies, AC compressors, water pumps, cooling fan motors, condenser units, and thermostats.",
+    "icon": "fa-snowflake",
+    "image": "/images/valve.jpg",
+    "count": 34
+  },
+  {
+    "id": "body-mirrors",
+    "name": "Body, Mirrors & Exterior",
+    "description": "Electric folding ORVM side mirrors, front & rear bumpers, honeycomb grilles, fenders, and hybrid wiper blades.",
+    "icon": "fa-shield",
+    "image": "/images/hero.jpg",
+    "count": 45
+  },
+  {
+    "id": "blades-vanes",
+    "name": "Industrial Turbines & Blades",
+    "description": "Power plant gas turbine rotor blades, stator vanes, guide vanes, and aerospace-grade superalloy components.",
+    "icon": "fa-fan",
+    "image": "/images/blade.jpg",
+    "count": 28
+  }
+]

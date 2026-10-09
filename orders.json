@@ -1,0 +1,61 @@
+[
+  {
+    "orderId": "ORD-78901",
+    "createdAt": "2026-10-02T11:20:00.000Z",
+    "customer": {
+      "company": "Tata Power Generation & Gas Turbines Ltd",
+      "contactName": "Sarah Tremblay",
+      "email": "stremblay@tatapower-industrial.in",
+      "address": "450 Energy Expressway, Trombay Thermal Station, Mumbai, Maharashtra 400074, India"
+    },
+    "paymentMethod": "B2B Net 30 Commercial Invoice (PO #TCP-8842)",
+    "items": [
+      {
+        "productId": "TT-FLT-0301",
+        "name": "Industrial Gas Turbine Air Intake Cartridge Filter (F9 / E10 HEPA)",
+        "quantity": 24,
+        "price": 15500.00,
+        "total": 372000.00
+      },
+      {
+        "productId": "TT-VIB-HT100",
+        "name": "High-Temp Turbine Vibration Sensor HT-100 (Accelerometers)",
+        "quantity": 2,
+        "price": 125000.00,
+        "total": 250000.00
+      }
+    ],
+    "subtotal": 622000.00,
+    "shipping": 0.00,
+    "tax": 0.00,
+    "total": 622000.00,
+    "shippingStatus": "Dispatched (BlueDart Express Tracking #8812739401)",
+    "status": "Completed"
+  },
+  {
+    "orderId": "ORD-78902",
+    "createdAt": "2026-10-05T16:45:00.000Z",
+    "customer": {
+      "company": "Reliance Infrastructure Cogeneration",
+      "contactName": "Carlos Mendoza",
+      "email": "c.mendoza@reliance-energy.in",
+      "address": "Dahanu Thermal Power Station, Dahanu, Maharashtra 401608, India"
+    },
+    "paymentMethod": "Corporate Credit Card / NEFT Wire Transfer",
+    "items": [
+      {
+        "productId": "TT-VLV-0501",
+        "name": "Electro-Hydraulic Fuel Metering Valve (GS6 / 3103 Equivalent)",
+        "quantity": 1,
+        "price": 540000.00,
+        "total": 540000.00
+      }
+    ],
+    "subtotal": 540000.00,
+    "shipping": 0.00,
+    "tax": 0.00,
+    "total": 540000.00,
+    "shippingStatus": "Processing in Central European Hub (Hamburg)",
+    "status": "In Progress"
+  }
+]
