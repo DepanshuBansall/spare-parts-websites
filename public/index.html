@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TurbineTek | Each & Every Car Brand & Industrial Spare Parts Under One Roof</title>
+  <meta name="description" content="TurbineTek is India's leading B2B e-commerce platform and OEM cross-reference portal for each and every car brand (Maruti, Hyundai, Tata, Mahindra, Toyota, Honda, Kia, VW, Skoda, BMW, Mercedes, Audi, Ford, Renault, Nissan) and industrial turbines.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300E5FF'><path d='M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14.93V17a1 1 0 0 1-2 0v-.07A6 6 0 0 1 6.07 12H7a1 1 0 0 1 0-2h-.93A6 6 0 0 1 11 5.07V6a1 1 0 0 1 2 0v-.93A6 6 0 0 1 17.93 10H17a1 1 0 0 1 0 2h.93A6 6 0 0 1 13 16.93z'/></svg>">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- CSS Styles -->
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Ticker -->
+  <div class="top-ticker">
+    <div class="container top-ticker-content">
+      <div class="ticker-badges">
+        <div class="ticker-item">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span><strong>100% Genuine & OEM Certified</strong> Parts Guarantee</span>
+        </div>
+        <div class="ticker-item">
+          <i class="fa-solid fa-truck-fast"></i>
+          <span><strong>24/48h Express Dispatch</strong> Pan-India Delivery</span>
+        </div>
+        <div class="ticker-item">
+          <i class="fa-solid fa-car-side"></i>
+          <span><strong>All 15+ Major Car Brands</strong> Under One Roof</span>
+        </div>
+      </div>
+      <div class="ticker-actions">
+        <a href="/fleet.html" class="ticker-link"><i class="fa-solid fa-car"></i> My Vehicle Fleet</a>
+        <a href="/admin.html" class="ticker-link"><i class="fa-solid fa-sliders"></i> Admin Portal</a>
+        <a href="/rfq.html" class="ticker-link" style="color: var(--accent-amber); font-weight: 600;"><i class="fa-solid fa-file-signature"></i> B2B RFQ Tender (₹)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="main-header">
+    <div class="container navbar">
+      <!-- Brand Logo -->
+      <a href="/" class="brand-logo">
+        <div class="brand-icon-wrap">
+          <i class="fa-solid fa-fan"></i>
+        </div>
+        <div>
+          TURBINE<span class="highlight">TEK</span>
+          <span class="brand-tagline">Car & Industrial Spares Under One Roof</span>
+        </div>
+      </a>
+
+      <!-- Header Live OEM Search Bar -->
+      <div class="header-search">
+        <div class="search-input-wrap">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="headerSearchInput" placeholder="Search by Car Brand (Maruti, Hyundai, Tata, Toyota, BMW...), Part No, or Model..." autocomplete="off">
+          <span class="search-badge">Press Enter</span>
+        </div>
+        <!-- Live Autocomplete Dropdown -->
+        <div class="search-results-dropdown" id="headerSearchResults"></div>
+      </div>
+
+      <!-- Navigation Menu -->
+      <ul class="nav-menu">
+        <li><a href="/" class="nav-link active"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="/catalog.html" class="nav-link"><i class="fa-solid fa-boxes-stacked"></i> Catalog</a></li>
+        <li><a href="#carBrandsSection" class="nav-link"><i class="fa-solid fa-car"></i> Car Brands</a></li>
+        <li><a href="#schematicSection" class="nav-link"><i class="fa-solid fa-diagram-project"></i> Schematic</a></li>
+        <li><a href="/fleet.html" class="nav-link"><i class="fa-solid fa-warehouse"></i> My Fleet</a></li>
+        <li><a href="/rfq.html" class="nav-link"><i class="fa-solid fa-file-invoice"></i> RFQs <span class="nav-badge-pill">B2B</span></a></li>
+        <li><a href="/admin.html" class="nav-link" style="color: var(--accent-amber);"><i class="fa-solid fa-lock"></i> Admin</a></li>
+      </ul>
+
+      <!-- Right Header Actions (Cart Trigger) -->
+      <div class="header-actions">
+        <button class="icon-btn" id="cartTriggerBtn" title="Procurement Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-count">0</span>
+        </button>
+        <a href="/rfq.html" class="btn btn-primary" style="font-size: 0.82rem; padding: 8px 16px;">
+          <i class="fa-solid fa-bolt"></i> Fast RFQ
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner Section -->
+  <section class="hero-section">
+    <div class="hero-bg-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-pill">
+          <i class="fa-solid fa-certificate"></i>
+          <span>All 15+ Major Car Brands & Industrial Power Equipment</span>
+        </div>
+        <h1 class="hero-title">
+          EACH & EVERY CAR BRAND & INDUSTRIAL SPARES.<br>
+          <span class="cyan-glow">ALL UNDER ONE ROOF.</span>
+        </h1>
+        <p class="hero-subtitle">
+          India's unified digital procurement marketplace and OEM cross-reference registry. Genuine and certified OEM spare parts for Maruti Suzuki, Hyundai, Tata Motors, Mahindra, Toyota, Honda, Kia, Volkswagen, Skoda, BMW, Mercedes-Benz, Audi, Ford, Renault, Nissan, and Heavy Industrial Turbines.
+        </p>
+        <div class="hero-actions">
+          <a href="/catalog.html" class="btn btn-primary" style="padding: 12px 26px; font-size: 1rem;">
+            <i class="fa-solid fa-boxes-stacked"></i> Browse All Spare Parts (₹)
+          </a>
+          <a href="#carBrandsSection" class="btn btn-secondary" style="padding: 12px 24px; font-size: 1rem;">
+            <i class="fa-solid fa-car-side"></i> Explore All 15 Car Brands
+          </a>
+          <a href="/rfq.html" class="btn btn-outline-cyan" style="padding: 12px 24px; font-size: 1rem;">
+            <i class="fa-solid fa-file-lines"></i> Request B2B Tender Quote
+          </a>
+        </div>
+
+        <div class="hero-stats-row">
+          <div class="hero-stat-item">
+            <h4>15<span>+</span></h4>
+            <p>Major Car Brands Covered</p>
+          </div>
+          <div class="hero-stat-item">
+            <h4>18,500<span>+</span></h4>
+            <p>Spare Parts Cataloged</p>
+          </div>
+          <div class="hero-stat-item">
+            <h4>100<span>%</span></h4>
+            <p>Interchange & Fitment Guarantee</p>
+          </div>
+          <div class="hero-stat-item">
+            <h4>24<span>h</span></h4>
+            <p>Express Dispatch Across India</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Equipment Compatibility Finder Widget (Onergys Benchmark) -->
+  <div class="container">
+    <div class="finder-card">
+      <div class="finder-header">
+        <div class="finder-title-wrap">
+          <div class="finder-icon">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+          </div>
+          <div>
+            <h3 class="finder-title">Fast Car & Equipment Spare Part Finder</h3>
+            <p class="finder-subtitle">Select your vehicle type, brand, and model to instantly reveal 100% verified matching spare parts</p>
+          </div>
+        </div>
+        <div style="font-size: 0.8rem; color: var(--text-muted); font-family: var(--font-mono);">
+          <i class="fa-solid fa-bolt" style="color: var(--accent-amber);"></i> Automated Cross-Indexing
+        </div>
+      </div>
+
+      <form id="finderForm" class="finder-form-grid">
+        <div class="form-group">
+          <label>1. Vehicle / Equipment Classification</label>
+          <select class="form-control" id="finderType" required>
+            <option value="">Loading machine & vehicle types...</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>2. Brand / Manufacturer</label>
+          <select class="form-control" id="finderMfr" required>
+            <option value="">-- First Select Classification --</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>3. Vehicle / Equipment Model</label>
+          <select class="form-control" id="finderModel" required>
+            <option value="">-- First Select Brand --</option>
+          </select>
+        </div>
+        <div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; height: 46px;">
+            <i class="fa-solid fa-magnifying-glass"></i> Find Parts
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Dedicated Car Brands Showcase Grid (All 15 Car Brands Under One Roof) -->
+  <section class="car-brands-section" id="carBrandsSection">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-car"></i> Complete Multi-Brand Registry</span>
+        <h2 class="section-title">Each & Every Car Brand. Under One Roof.</h2>
+        <p class="section-desc">
+          Click on any brand below to instantly explore certified OEM and premium aftermarket replacement spares: brakes, suspension, engine timing, filters, transmission, and cooling systems.
+        </p>
+      </div>
+
+      <div class="car-brands-grid">
+        <!-- 1. Maruti Suzuki -->
+        <a href="/catalog.html?manufacturer=Maruti+Suzuki" class="brand-card">
+          <div class="brand-card-top">
+            <div class="brand-badge-icon"><i class="fa-solid fa-car-side"></i></div>
+            <span class="brand-origin-tag">India / Japan</span>
+          </div>
+          <div class="brand-card-name">Maruti Suzuki</div>
+          <div class="brand-card-sub">OEM & Bosch Spares</div>
+          <div class="brand-card-models">Swift, Baleno, Brezza, Dzire, Ertiga, Grand Vitara, Fronx, Wagon R</div>
+          <div class="brand-card-action">Browse Spares <i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <!-- 2. Hyundai -->
+        <a href="/catalog.html?manufacturer=Hyundai" class="brand-card">
+          <div class="brand-card-top">
+            <div class="brand-badge-icon"><i class="fa-solid fa-car"></i></div>
+            <span class="brand-origin-tag">South Korea</span>
+          </div>
+          <div class="brand-card-name">Hyundai</div>
+          <div class="brand-card-sub">OEM Mobis & Brembo</div>
+          <div class="brand-card-models">Creta, i20, Verna, Venue, Exter, Alcazar, Tucson, Grand i10 Nios</div>
+          <div class="brand-card-action">Browse Spares <i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <!-- 3. Tata Motors -->
+        <a href="/catalog.html?manufacturer=Tata+Motors" class="brand-card">
+          <div class="brand-card-top">
+            <div class="brand-badge-icon"><i class="fa-solid fa-truck-monster"></i></div>
+            <span class="brand-origin-tag">India</span>
+          </div>
+          <div class="brand-card-name">Tata Motors</div>
+          <div class="brand-card-sub">Garrett & Tata Genuine</div>
+          <div class="brand-card-models">Nexon, Harrier, Safari, Punch, Altroz, Tiago, Tigor, Curvv</div>
+          <div class="brand-card-action">Browse Spares <i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <!-- 4. Mahindra -->
+        <a href="/catalog.html?manufacturer=Mahindra" class="brand-card">
+          <div class="brand-card-top">
+            <div class="brand-badge-icon"><i class="fa-solid fa-mountain"></i></div>
+            <span class="brand-origin-tag">India</span>
+          </div>
+          <div class="brand-card-name">Mahindra</div>
+          <div class="brand-card-sub">Heavy Duty 4x4 Spares</div>
+          <div class="brand-card-models">Scorpio-N, Thar 4x4, Thar Roxx, XUV700, XUV300, Bolero Neo</div>
+          <div class="brand-card-action">Browse Spares <i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <!-- 5. Toyota -->
+        <a href="/catalog.html?manufacturer=Toyota" class="brand-card">
+          <div class="brand-card-top">
+            <div class="brand-badge-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <span class="brand-origin-tag">Japan</span>
+          </div>
+          <div class="brand-card-name">Toyota</div>
+          <div class="brand-card-sub">Denso & Advics Spares</div>
+          <div class="brand-card-models">Innova Crysta, Fortuner, Hycross, Urban Cruiser Hyryder, Glanza, Hilux</div>
+          <div class="brand-card-action">Browse Spares <i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <!-- 6. Honda -->
+        <a href="/catalog.html?manufacturer=Honda" class="brand-card">
+          <div class="brand-card-top">
+            <div class="brand-badge-icon"><i class="fa-solid fa-gauge-high"></i></div>
+            <span class="brand-origin-tag">Japan</span>
+          </div>
+          <div class="brand-card-name">Honda</div>
+          <div class="brand-card-sub">i-VTEC & Valeo Spares</div>
+          <div class="brand-card-models">City (Gen 5/4), Amaze, Elevate, Civic, CR-V, Jazz</div>
+          <div class="brand-card-action">Browse Spares <i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <!-- 7. Kia -->
+        <a href="/catalog.html?manufacturer=Kia" class="brand-card">
+          <div class="brand-card-top">
+            <div class="brand-badge-icon"><i class="fa-solid fa-bolt"></i></div>
+            <span class="brand-origin-tag">South Korea</span>
+          </div>
+          <div class="brand-card-name">Kia</div>
+          <div class="brand-card-sub">Mobis & Mando OE</div>
+          <div class="brand-card-models">Seltos, Sonet, Carens, Carnival, EV6</div>
+          <div class="brand-card-action">Browse Spares <i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <!-- 8. Volkswagen -->
+        <a href="/catalog.html?manufacturer=Volkswagen" class="brand-card">
+          <div class="brand-card-top">
+            <div class="brand-badge-icon"><i class="fa-solid fa-gears"></i></div>
+            <span class="brand-origin-tag">Germany</span>
+          </div>
+          <div class="brand-card-name">Volkswagen</div>
+          <div class="brand-card-sub">TSI/TDI & LuK DMF</div>
+          <div class="brand-card-models">Virtus, Taigun, Polo GT TSI, Vento, Tiguan, Jetta</div>
+          <div class="brand-card-action">Browse Spares <i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <!-- 9. Skoda -->
+        <a href="/catalog.html?manufacturer=Skoda" class="brand-card">
+          <div class="brand-card-top">
+            <div class="brand-badge-icon"><i class="fa-solid fa-feather-pointed"></i></div>
+            <span class="brand-origin-tag">Czech / Germany</span>
+          </div>
+          <div class="brand-card-name">Skoda Auto</div>
+          <div class="brand-card-sub">Bilstein & Zimmermann</div>
+          <div class="brand-card-models">Slavia, Kushaq, Octavia (A7/A8), Superb, Kodiaq, Rapid</div>
+          <div class="brand-card-action">Browse Spares <i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <!-- 10. BMW -->
+        <a href="/catalog.html?manufacturer=BMW" class="brand-card">
+          <div class="brand-card-top">
+            <div class="brand-badge-icon"><i class="fa-solid fa-crown"></i></div>
+            <span class="brand-origin-tag">Germany</span>
+          </div>
+          <div class="brand-card-name">BMW</div>
+          <div class="brand-card-sub">Mann-Filter & Brembo M</div>
+          <div class="brand-card-models">3 Series (G20/F30), 5 Series (G30), X1, X3, X5, 7 Series</div>
+          <div class="brand-card-action">Browse Spares <i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <!-- 11. Mercedes-Benz -->
+        <a href="/catalog.html?manufacturer=Mercedes-Benz" class="brand-card">
+          <div class="brand-card-top">
+            <div class="brand-badge-icon"><i class="fa-solid fa-star"></i></div>
+            <span class="brand-origin-tag">Germany</span>
+          </div>
+          <div class="brand-card-name">Mercedes-Benz</div>
+          <div class="brand-card-sub">Textar & Lemförder ZF</div>
+          <div class="brand-card-models">C-Class (W205/W206), E-Class (W213), GLC, GLA, GLE, S-Class</div>
+          <div class="brand-card-action">Browse Spares <i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <!-- 12. Audi -->
+        <a href="/catalog.html?manufacturer=Audi" class="brand-card">
+          <div class="brand-card-top">
+            <div class="brand-badge-icon"><i class="fa-solid fa-ring"></i></div>
+            <span class="brand-origin-tag">Germany</span>
+          </div>
+          <div class="brand-card-name">Audi</div>
+          <div class="brand-card-sub">Quattro & BorgWarner</div>
+          <div class="brand-card-models">A4 2.0 TFSI, A6 Matrix, Q3, Q5 Quattro, Q7, RS5</div>
+          <div class="brand-card-action">Browse Spares <i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <!-- 13. Ford -->
+        <a href="/catalog.html?manufacturer=Ford" class="brand-card">
+          <div class="brand-card-top">
+            <div class="brand-badge-icon"><i class="fa-solid fa-compass"></i></div>
+            <span class="brand-origin-tag">United States</span>
+          </div>
+          <div class="brand-card-name">Ford</div>
+          <div class="brand-card-sub">Motorcraft & Continental</div>
+          <div class="brand-card-models">EcoSport 1.5, Endeavour 4x4, Figo, Aspire, Mustang</div>
+          <div class="brand-card-action">Browse Spares <i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <!-- 14. Renault -->
+        <a href="/catalog.html?manufacturer=Renault" class="brand-card">
+          <div class="brand-card-top">
+            <div class="brand-badge-icon"><i class="fa-solid fa-gem"></i></div>
+            <span class="brand-origin-tag">France</span>
+          </div>
+          <div class="brand-card-name">Renault</div>
+          <div class="brand-card-sub">Valeo & Gabriel OE</div>
+          <div class="brand-card-models">Kwid 1.0, Triber, Kiger Turbo, Duster AWD</div>
+          <div class="brand-card-action">Browse Spares <i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <!-- 15. Nissan -->
+        <a href="/catalog.html?manufacturer=Nissan" class="brand-card">
+          <div class="brand-card-top">
+            <div class="brand-badge-icon"><i class="fa-solid fa-circle-dot"></i></div>
+            <span class="brand-origin-tag">Japan</span>
+          </div>
+          <div class="brand-card-name">Nissan</div>
+          <div class="brand-card-sub">Akebono & Calsonic</div>
+          <div class="brand-card-models">Magnite Turbo, Kicks, Sunny, Terrano, X-Trail</div>
+          <div class="brand-card-action">Browse Spares <i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <!-- 16. Industrial Power -->
+        <a href="/catalog.html?category=blades-vanes" class="brand-card" style="border-color: rgba(0,229,255,0.3); background: rgba(0,229,255,0.04);">
+          <div class="brand-card-top">
+            <div class="brand-badge-icon" style="color: var(--accent-amber); border-color: rgba(245,158,11,0.4);"><i class="fa-solid fa-industry"></i></div>
+            <span class="brand-origin-tag" style="color: var(--accent-amber);">USA / Germany</span>
+          </div>
+          <div class="brand-card-name">Industrial Turbines</div>
+          <div class="brand-card-sub">GE, Siemens & Woodward</div>
+          <div class="brand-card-models">LM2500, LM6000, SGT-400, SGT-800, Frame 6B</div>
+          <div class="brand-card-action" style="color: var(--accent-amber);">Browse Turbines <i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Interactive Exploded Turbine Schematic (The Teacher Wow Factor) -->
+  <section class="schematic-section" id="schematicSection">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-microchip"></i> Interactive Engineering CAD</span>
+        <h2 class="section-title">Interactive Gas Turbine Component Explorer</h2>
+        <p class="section-desc">
+          Click or hover on any sub-assembly of the industrial heavy-duty gas turbine below to inspect operating telemetry and immediately reveal all certified spare parts engineered for that section.
+        </p>
+      </div>
+
+      <div class="turbine-interactive-container">
+        <div class="schematic-instructions">
+          <div class="schematic-hint">
+            <i class="fa-solid fa-crosshairs"></i>
+            <span>Interactive Schematic: Click any glowing turbine zone or select a stage to isolate spare parts</span>
+          </div>
+          <div class="schematic-stages-nav">
+            <button class="stage-btn" data-section="all">All Sections</button>
+            <button class="stage-btn" data-section="intake">Air Intake</button>
+            <button class="stage-btn" data-section="compressor">Compressor</button>
+            <button class="stage-btn active" data-section="combustor">Combustor</button>
+            <button class="stage-btn" data-section="turbine">Turbine Stages</button>
+            <button class="stage-btn" data-section="exhaust">Exhaust</button>
+            <button class="stage-btn" data-section="bearings">Bearings & Seals</button>
+          </div>
+        </div>
+
+        <!-- SVG Vector Schematic of an Industrial Gas Turbine -->
+        <div class="svg-diagram-wrapper">
+          <svg class="turbine-svg" viewBox="0 0 1100 360" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="intakeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00E5FF" stop-opacity="0.3" />
+                <stop offset="100%" stop-color="#0284C7" stop-opacity="0.6" />
+              </linearGradient>
+              <linearGradient id="compGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#0284C7" stop-opacity="0.5" />
+                <stop offset="100%" stop-color="#0369A1" stop-opacity="0.7" />
+              </linearGradient>
+              <linearGradient id="combGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.7" />
+                <stop offset="100%" stop-color="#EF4444" stop-opacity="0.8" />
+              </linearGradient>
+              <linearGradient id="turbGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#EF4444" stop-opacity="0.7" />
+                <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.5" />
+              </linearGradient>
+              <linearGradient id="exhGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#64748B" stop-opacity="0.5" />
+                <stop offset="100%" stop-color="#334155" stop-opacity="0.3" />
+              </linearGradient>
+              <linearGradient id="shaftGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#94A3B8" />
+                <stop offset="50%" stop-color="#F8FAFC" />
+                <stop offset="100%" stop-color="#475569" />
+              </linearGradient>
+            </defs>
+
+            <!-- Centerline Grid Lines & Background Structure -->
+            <line x1="20" y1="180" x2="1080" y2="180" stroke="rgba(0, 229, 255, 0.2)" stroke-dasharray="8 4" stroke-width="1.5" />
+            <text x="30" y="30" fill="#64748B" font-family="JetBrains Mono" font-size="12">TURBINETEK CAD-VIEW: INDUSTRIAL GAS TURBINE ROTOR & CASING CROSS SECTION</text>
+
+            <!-- Main Rotor Shaft -->
+            <rect x="120" y="168" width="860" height="24" rx="4" fill="url(#shaftGrad)" opacity="0.9" />
+
+            <!-- 1. AIR INTAKE & INLET HOUSING (Zone: intake) -->
+            <g class="turbine-zone" data-section="intake">
+              <path d="M 40,80 L 160,110 L 160,250 L 40,280 Z" fill="url(#intakeGrad)" stroke="#00E5FF" stroke-width="1.5" />
+              <!-- Filter Cartridge Grids -->
+              <line x1="70" y1="95" x2="70" y2="265" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="4 3" opacity="0.7" />
+              <line x1="100" y1="100" x2="100" y2="260" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="4 3" opacity="0.7" />
+              <line x1="130" y1="105" x2="130" y2="255" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="4 3" opacity="0.7" />
+              <text x="60" y="185" fill="#FFFFFF" font-family="Outfit" font-size="14" font-weight="700">AIR INTAKE</text>
+              <text x="50" y="202" fill="#00E5FF" font-family="JetBrains Mono" font-size="10">HEPA F9/E10</text>
+            </g>
+
+            <!-- 2. AXIAL COMPRESSOR STAGES (Zone: compressor) -->
+            <g class="turbine-zone" data-section="compressor">
+              <!-- Casing taper -->
+              <polygon points="170,112 440,138 440,222 170,248" fill="url(#compGrad)" stroke="#0284C7" stroke-width="1.5" />
+              <!-- Compressor Rotor & Stator Blades -->
+              <g stroke="#E2E8F0" stroke-width="3" stroke-linecap="round">
+                <!-- Blade rows from stage 1 to stage 14 -->
+                <line x1="190" y1="116" x2="190" y2="168" /><line x1="190" y1="192" x2="190" y2="244" />
+                <line x1="220" y1="119" x2="220" y2="168" /><line x1="220" y1="192" x2="220" y2="241" />
+                <line x1="250" y1="122" x2="250" y2="168" /><line x1="250" y1="192" x2="250" y2="238" />
+                <line x1="280" y1="125" x2="280" y2="168" /><line x1="280" y1="192" x2="280" y2="235" />
+                <line x1="310" y1="128" x2="310" y2="168" /><line x1="310" y1="192" x2="310" y2="232" />
+                <line x1="340" y1="131" x2="340" y2="168" /><line x1="340" y1="192" x2="340" y2="229" />
+                <line x1="370" y1="134" x2="370" y2="168" /><line x1="370" y1="192" x2="370" y2="226" />
+                <line x1="400" y1="136" x2="400" y2="168" /><line x1="400" y1="192" x2="400" y2="224" />
+                <line x1="430" y1="138" x2="430" y2="168" /><line x1="430" y1="192" x2="430" y2="222" />
+              </g>
+              <text x="240" y="160" fill="#FFFFFF" font-family="Outfit" font-size="14" font-weight="700">COMPRESSOR</text>
+              <text x="250" y="210" fill="#38BDF8" font-family="JetBrains Mono" font-size="10">14-17 Stages (Ti-6Al-4V)</text>
+            </g>
+
+            <!-- 3. COMBUSTOR & FUEL INJECTORS (Zone: combustor) -->
+            <g class="turbine-zone selected" data-section="combustor">
+              <!-- Top combustor can -->
+              <path d="M 450,135 Q 520,70 600,120 L 590,165 L 450,165 Z" fill="url(#combGrad)" stroke="#F59E0B" stroke-width="2" />
+              <!-- Bottom combustor can -->
+              <path d="M 450,225 Q 520,290 600,240 L 590,195 L 450,195 Z" fill="url(#combGrad)" stroke="#F59E0B" stroke-width="2" />
+              <!-- Fuel nozzle & spark igniter pins -->
+              <circle cx="480" cy="115" r="8" fill="#FBBF24" stroke="#FFF" stroke-width="1.5" />
+              <line x1="480" y1="85" x2="480" y2="115" stroke="#F59E0B" stroke-width="3" />
+              <circle cx="480" cy="245" r="8" fill="#FBBF24" stroke="#FFF" stroke-width="1.5" />
+              <line x1="480" y1="275" x2="480" y2="245" stroke="#F59E0B" stroke-width="3" />
+              <text x="475" y="145" fill="#FFFFFF" font-family="Outfit" font-size="13" font-weight="700">COMBUSTOR</text>
+              <text x="470" y="222" fill="#FDE047" font-family="JetBrains Mono" font-size="10">DLN Igniters & Valves</text>
+            </g>
+
+            <!-- 4. HIGH-PRESSURE & POWER TURBINE (Zone: turbine) -->
+            <g class="turbine-zone" data-section="turbine">
+              <!-- Turbine expansion casing -->
+              <polygon points="610,120 780,95 780,265 610,240" fill="url(#turbGrad)" stroke="#EF4444" stroke-width="2" />
+              <!-- Turbine Inconel Rotor Blades & Stator Vanes -->
+              <g stroke="#F8FAFC" stroke-width="4" stroke-linecap="round">
+                <line x1="630" y1="122" x2="630" y2="168" /><line x1="630" y1="192" x2="630" y2="238" />
+                <line x1="670" y1="115" x2="670" y2="168" /><line x1="670" y1="192" x2="670" y2="245" />
+                <line x1="715" y1="108" x2="715" y2="168" /><line x1="715" y1="192" x2="715" y2="252" />
+                <line x1="760" y1="98" x2="760" y2="168" /><line x1="760" y1="192" x2="760" y2="262" />
+              </g>
+              <text x="645" y="160" fill="#FFFFFF" font-family="Outfit" font-size="14" font-weight="700">TURBINE STAGES</text>
+              <text x="655" y="210" fill="#FCA5A5" font-family="JetBrains Mono" font-size="10">Inconel 718 Blades</text>
+            </g>
+
+            <!-- 5. EXHAUST DIFFUSER (Zone: exhaust) -->
+            <g class="turbine-zone" data-section="exhaust">
+              <polygon points="790,92 920,70 920,290 790,268" fill="url(#exhGrad)" stroke="#94A3B8" stroke-width="1.5" />
+              <!-- Thermocouple Sensor Rake -->
+              <line x1="840" y1="80" x2="840" y2="280" stroke="#00E5FF" stroke-width="2" stroke-dasharray="6 4" />
+              <circle cx="840" cy="120" r="5" fill="#00E5FF" />
+              <circle cx="840" cy="240" r="5" fill="#00E5FF" />
+              <text x="815" y="185" fill="#FFFFFF" font-family="Outfit" font-size="14" font-weight="700">EXHAUST</text>
+              <text x="810" y="202" fill="#38BDF8" font-family="JetBrains Mono" font-size="10">Dual Type-K EGT</text>
+            </g>
+
+            <!-- 6. SHAFT BEARINGS & LABYRINTH SEALS (Zone: bearings) -->
+            <g class="turbine-zone" data-section="bearings">
+              <!-- Front Bearing & Seal -->
+              <rect x="150" y="156" width="30" height="48" rx="4" fill="#0284C7" stroke="#00E5FF" stroke-width="1.5" />
+              <!-- Mid Bearing -->
+              <rect x="430" y="156" width="24" height="48" rx="4" fill="#0284C7" stroke="#00E5FF" stroke-width="1.5" />
+              <!-- Rear Bearing & Seal -->
+              <rect x="770" y="156" width="30" height="48" rx="4" fill="#0284C7" stroke="#00E5FF" stroke-width="1.5" />
+              <!-- Generator Coupling -->
+              <rect x="940" y="162" width="60" height="36" rx="4" fill="#475569" stroke="#E2E8F0" stroke-width="1.5" />
+              <line x1="970" y1="162" x2="970" y2="198" stroke="#00E5FF" stroke-width="2" />
+              <text x="945" y="218" fill="#94A3B8" font-family="JetBrains Mono" font-size="9">Gen Coupling</text>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Real-Time Telemetry HUD Overlay -->
+        <div class="zone-telemetry-hud">
+          <div class="hud-title-zone">
+            <h4 id="hudZoneTitle">Combustor & Fuel Injection System</h4>
+            <p id="hudZoneDesc">Click on any section above to inspect components, operating conditions, and spare parts.</p>
+          </div>
+          <div class="hud-metrics-grid">
+            <div class="hud-metric-item">
+              <span>Section Temperature</span>
+              <strong id="hudZoneTemp">1,450 °C Firing Temp</strong>
+            </div>
+            <div class="hud-metric-item">
+              <span>Mass / Fuel Flow</span>
+              <strong id="hudZoneFlow">Natural Gas / Biogas</strong>
+            </div>
+            <div class="hud-metric-item">
+              <span>Stage Pressure</span>
+              <strong id="hudZonePressure">29.5 bar</strong>
+            </div>
+          </div>
+          <div>
+            <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase;">Available Spares</span>
+            <div id="hudZoneParts" style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--accent-cyan); font-weight: 600; margin-top: 4px;">
+              Spark Plugs, Fuel Valves, Igniters
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Spare Parts Showcase Section -->
+  <section class="catalog-section" id="catalogShowcase">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-boxes-packing"></i> Certified OEM & Alternative Inventory</span>
+        <h2 class="section-title">Critical Industrial Spare Parts</h2>
+        <p class="section-desc">
+          High-performance spare parts engineered for baseload reliability. Every component is backed with EN 10204 3.1 material test certification and DIN EN ISO 9001:2015 traceability.
+        </p>
+      </div>
+
+      <!-- Quick Section Filtering Pills -->
+      <div class="catalog-filter-bar">
+        <div class="filter-pills-list">
+          <button class="filter-pill active" onclick="filterProductsBySection('all')">All Components</button>
+          <button class="filter-pill" onclick="filterProductsBySection('turbine')"><i class="fa-solid fa-fan"></i> Blades & Vanes</button>
+          <button class="filter-pill" onclick="filterProductsBySection('combustor')"><i class="fa-solid fa-bolt"></i> Spark Plugs & Igniters</button>
+          <button class="filter-pill" onclick="filterProductsBySection('intake')"><i class="fa-solid fa-filter"></i> Air & Oil Filters</button>
+          <button class="filter-pill" onclick="filterProductsBySection('exhaust')"><i class="fa-solid fa-microchip"></i> Sensors & Probes</button>
+          <button class="filter-pill" onclick="filterProductsBySection('bearings')"><i class="fa-solid fa-ring"></i> Seals & Gaskets</button>
+        </div>
+
+        <div class="catalog-sort-wrap">
+          <label for="catalogSort">Order By:</label>
+          <select id="catalogSort" onchange="handleSortChange(this.value)">
+            <option value="popular">Recommended / Popular</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="name-asc">Part Name (A-Z)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Live Dynamic Product Grid -->
+      <div class="products-grid" id="featuredProductsGrid">
+        <!-- Products populated dynamically via app.js -->
+      </div>
+
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="/catalog.html" class="btn btn-secondary" style="padding: 12px 30px; font-size: 0.95rem;">
+          <i class="fa-solid fa-layer-group"></i> View Entire 18,500+ Component Catalog
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Category Showcase Grid -->
+  <section class="categories-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-sitemap"></i> Product Categories</span>
+        <h2 class="section-title">Explore by Component Classification</h2>
+        <p class="section-desc">
+          Structured industrial categorization aligned with international VDMA and DIN energy equipment standards.
+        </p>
+      </div>
+
+      <div class="categories-grid" id="categoriesGrid">
+        <!-- Categories populated dynamically via app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- OEM Cross-Reference Fast Lookup Section -->
+  <section class="cross-ref-section">
+    <div class="container">
+      <div class="cross-ref-box">
+        <div>
+          <span class="section-tag"><i class="fa-solid fa-code-compare"></i> Interchange Engine</span>
+          <h2 style="font-size: 1.8rem; margin: 10px 0 12px;">Instant OEM Part Cross-Reference</h2>
+          <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6;">
+            Have an existing OEM part number from GE, Siemens, Solar, Jenbacher, MWM, Bosch, or Denso? Enter it below to immediately identify certified aftermarket alternatives, current European/US stock, and pricing.
+          </p>
+
+          <div class="cross-ref-input-group">
+            <input type="text" id="crossRefInput" class="form-control" placeholder="e.g. GI3-1, 314A5600P001, FB77WPCC, 0160 D 003...">
+            <button id="crossRefBtn" class="btn btn-primary" style="padding: 0 24px;">
+              <i class="fa-solid fa-magnifying-glass"></i> Cross-Match
+            </button>
+          </div>
+
+          <div class="cross-ref-tags-row">
+            <span class="cross-ref-tag-label">Popular Searches:</span>
+            <button class="cross-tag-btn" data-code="GI3-1">Denso GI3-1</button>
+            <button class="cross-tag-btn" data-code="FB77WPCC">Champion FB77</button>
+            <button class="cross-tag-btn" data-code="314A5600P001">GE 314A5600P001</button>
+            <button class="cross-tag-btn" data-code="LM2500">GE LM2500</button>
+            <button class="cross-tag-btn" data-code="SGT-400">Siemens SGT-400</button>
+            <button class="cross-tag-btn" data-code="TCG 2020">MWM 2020</button>
+          </div>
+        </div>
+
+        <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 24px;">
+          <h4 style="font-size: 1rem; color: var(--accent-cyan); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-check-double"></i> Why Choose TurbineTek Cross-Reference?
+          </h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 0.88rem; color: var(--text-secondary);">
+            <li style="display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fa-solid fa-circle-check" style="color: var(--accent-cyan); margin-top: 4px;"></i>
+              <span><strong>100% Fit, Form & Function:</strong> Exact metallurgical and dimensional matching backed with 3D CMM inspection.</span>
+            </li>
+            <li style="display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fa-solid fa-circle-check" style="color: var(--accent-cyan); margin-top: 4px;"></i>
+              <span><strong>Up to 45% Procurement Savings:</strong> Avoid proprietary OEM markups without sacrificing service life or warranties.</span>
+            </li>
+            <li style="display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fa-solid fa-circle-check" style="color: var(--accent-cyan); margin-top: 4px;"></i>
+              <span><strong>Material Conformity:</strong> Certified with EN 10204 3.1 inspection reports for full insurance & audit compliance.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- B2B Industrial Advantages / Trust Pillars -->
+  <section class="pillars-section">
+    <div class="container">
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon">
+            <i class="fa-solid fa-certificate"></i>
+          </div>
+          <h3 class="pillar-title">DIN EN ISO 9001:2015</h3>
+          <p class="pillar-text">
+            All manufacturing facilities and supply hubs operate under strict European quality management and certified traceability.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">
+            <i class="fa-solid fa-plane-up"></i>
+          </div>
+          <h3 class="pillar-title">AOG Emergency Dispatch</h3>
+          <p class="pillar-text">
+            24/7 emergency response logistics with chartered air freight or next-flight-out dispatch to minimize power plant outage downtime.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">
+            <i class="fa-solid fa-file-contract"></i>
+          </div>
+          <h3 class="pillar-title">B2B Net 30/60 Invoicing</h3>
+          <p class="pillar-text">
+            Simplified commercial credit lines for verified power plant utilities, independent power producers (IPPs), and service contractors.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">
+            <i class="fa-solid fa-shield-virus"></i>
+          </div>
+          <h3 class="pillar-title">Comprehensive Warranty</h3>
+          <p class="pillar-text">
+            Full 12 to 24 month aftermarket warranty on all rotor blades, valves, ignition systems, and instrumentation products.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide-out B2B Procurement Cart Drawer -->
+  <div class="cart-drawer-overlay" id="cartOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <div class="cart-drawer-title">
+        <i class="fa-solid fa-cart-flatbed" style="color: var(--accent-cyan);"></i> Procurement Cart
+      </div>
+      <button class="close-btn" id="cartCloseBtn">&times;</button>
+    </div>
+
+    <div class="cart-items-body" id="cartItemsList">
+      <!-- Populated dynamically via cart.js -->
+    </div>
+
+    <div class="cart-drawer-footer">
+      <div class="cart-totals-row">
+        <span>Component Subtotal:</span>
+        <strong id="cartSubtotal" class="mono">₹0.00</strong>
+      </div>
+      <div class="cart-totals-row">
+        <span>Freight & Dangerous Goods Handling:</span>
+        <strong id="cartFreight" class="mono">₹0.00</strong>
+      </div>
+      <div class="cart-totals-row grand-total">
+        <span>Estimated Total:</span>
+        <strong id="cartGrandTotal" class="mono" style="color: var(--accent-cyan);">₹0.00</strong>
+      </div>
+
+      <div class="cart-footer-actions">
+        <button id="cartCheckoutBtn" class="btn btn-primary" style="width: 100%;">
+          <i class="fa-solid fa-lock"></i> Direct B2B Purchase Order (PO)
+        </button>
+        <button id="cartRfqBtn" class="btn btn-amber" style="width: 100%;">
+          <i class="fa-solid fa-file-invoice"></i> Convert to Formal RFQ Quotation
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="/" class="brand-logo" style="margin-bottom: 16px;">
+            <div class="brand-icon-wrap" style="width: 36px; height: 36px; font-size: 1.1rem;">
+              <i class="fa-solid fa-fan"></i>
+            </div>
+            <div>TURBINE<span class="highlight">TEK</span></div>
+          </a>
+          <p>
+            TurbineTek is the global premier engineering spare parts platform for industrial gas turbines, steam turbines, and cogeneration gas engines. All spare parts under one roof with verified OEM interchangeability.
+          </p>
+          <div style="margin-top: 18px; display: flex; gap: 12px;">
+            <span style="font-size: 0.8rem; background: rgba(255,255,255,0.05); padding: 4px 10px; border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
+              <i class="fa-solid fa-location-dot" style="color: var(--accent-cyan);"></i> Hamburg • Houston • Dubai
+            </span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Supported Turbines</h4>
+          <ul class="footer-links">
+            <li><a href="/catalog.html?turbineModel=LM2500">GE LM2500 & LM6000</a></li>
+            <li><a href="/catalog.html?turbineModel=SGT-400">Siemens SGT-400 / SGT-800</a></li>
+            <li><a href="/catalog.html?turbineModel=Taurus 60">Solar Taurus 60 & Titan 130</a></li>
+            <li><a href="/catalog.html?turbineModel=JMS 320 GS">INNIO Jenbacher J320 / J420</a></li>
+            <li><a href="/catalog.html?turbineModel=TCG 2020">MWM Caterpillar TCG 2020</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Spare Categories</h4>
+          <ul class="footer-links">
+            <li><a href="/catalog.html?category=blades-vanes">Rotor Blades & Guide Vanes</a></li>
+            <li><a href="/catalog.html?category=ignition-electrical">Industrial Spark Plugs & Igniters</a></li>
+            <li><a href="/catalog.html?category=filtration-systems">HEPA Air & Lube Oil Filters</a></li>
+            <li><a href="/catalog.html?category=sensors-instrumentation">Vibration & Temperature Probes</a></li>
+            <li><a href="/catalog.html?category=fuel-valves">Fuel Metering Valves & Actuators</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>B2B Portals & Tools</h4>
+          <ul class="footer-links">
+            <li><a href="/rfq.html"><i class="fa-solid fa-file-lines" style="color: var(--accent-amber);"></i> Request for Quotation (RFQ) Tender</a></li>
+            <li><a href="/fleet.html"><i class="fa-solid fa-industry" style="color: var(--accent-cyan);"></i> "My Plant Fleet" Equipment Registry</a></li>
+            <li><a href="/admin.html"><i class="fa-solid fa-shield" style="color: #A855F7;"></i> Administrator Control Center</a></li>
+            <li><a href="#schematicSection"><i class="fa-solid fa-crosshairs" style="color: var(--accent-cyan);"></i> Interactive Turbine 3D Explorer</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 TurbineTek International GmbH. All Rights Reserved. Built as an academic Major Project.
+        </div>
+        <div style="display: flex; gap: 20px;">
+          <span>DIN EN ISO 9001:2015</span>
+          <span>CE Conformity</span>
+          <span>ATEX Compliant</span>
+          <span>EN 10204 3.1 Traceability</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/api.js"></script>
+  <script src="/js/cart.js"></script>
+  <script src="/js/app.js"></script>
+  <script>
+    function handleSortChange(sortVal) {
+      if (sortVal === 'price-asc') allProductsCache.sort((a,b) => a.price - b.price);
+      else if (sortVal === 'price-desc') allProductsCache.sort((a,b) => b.price - a.price);
+      else if (sortVal === 'name-asc') allProductsCache.sort((a,b) => a.name.localeCompare(b.name));
+      const container = document.getElementById('featuredProductsGrid');
+      if (container) renderProductsList(allProductsCache, container);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spare Parts Catalog & Cross-Reference | TurbineTek</title>
+  <meta name="description" content="Browse our complete inventory of industrial turbine blades, gas engine spark plugs, air & oil filters, sensors, valves, and gaskets.">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300E5FF'><path d='M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14.93V17a1 1 0 0 1-2 0v-.07A6 6 0 0 1 6.07 12H7a1 1 0 0 1 0-2h-.93A6 6 0 0 1 11 5.07V6a1 1 0 0 1 2 0v-.93A6 6 0 0 1 17.93 10H17a1 1 0 0 1 0 2h.93A6 6 0 0 1 13 16.93z'/></svg>">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Ticker -->
+  <div class="top-ticker">
+    <div class="container top-ticker-content">
+      <div class="ticker-badges">
+        <div class="ticker-item"><i class="fa-solid fa-shield-halved"></i> <span><strong>DIN EN ISO 9001:2015</strong> Certified</span></div>
+        <div class="ticker-item"><i class="fa-solid fa-plane-departure"></i> <span><strong>AOG Express Freight</strong> 24/48h</span></div>
+      </div>
+      <div class="ticker-actions">
+        <a href="/fleet.html" class="ticker-link"><i class="fa-solid fa-industry"></i> My Plant Fleet</a>
+        <a href="/admin.html" class="ticker-link"><i class="fa-solid fa-sliders"></i> Admin Portal</a>
+        <a href="/rfq.html" class="ticker-link" style="color: var(--accent-amber); font-weight: 600;"><i class="fa-solid fa-file-signature"></i> B2B RFQ Tender</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="container navbar">
+      <a href="/" class="brand-logo">
+        <div class="brand-icon-wrap"><i class="fa-solid fa-fan"></i></div>
+        <div>TURBINE<span class="highlight">TEK</span><span class="brand-tagline">Power Plant Spare Parts</span></div>
+      </a>
+
+      <!-- Quick Search -->
+      <div class="header-search">
+        <div class="search-input-wrap">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="headerSearchInput" placeholder="Quick search part number..." autocomplete="off">
+        </div>
+        <div class="search-results-dropdown" id="headerSearchResults"></div>
+      </div>
+
+      <ul class="nav-menu">
+        <li><a href="/" class="nav-link"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="/catalog.html" class="nav-link active"><i class="fa-solid fa-boxes-stacked"></i> Catalog</a></li>
+        <li><a href="/fleet.html" class="nav-link"><i class="fa-solid fa-industry"></i> Plant Fleet</a></li>
+        <li><a href="/rfq.html" class="nav-link"><i class="fa-solid fa-file-invoice"></i> RFQs <span class="nav-badge-pill">B2B</span></a></li>
+        <li><a href="/admin.html" class="nav-link" style="color: var(--accent-amber);"><i class="fa-solid fa-lock"></i> Admin</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="cartTriggerBtn" title="Procurement Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-count">0</span>
+        </button>
+        <a href="/rfq.html" class="btn btn-primary" style="font-size: 0.82rem; padding: 8px 16px;">
+          <i class="fa-solid fa-bolt"></i> Fast RFQ
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Catalog Page Header -->
+  <div class="catalog-page-header">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px;">
+        <div>
+          <span class="section-tag"><i class="fa-solid fa-car-side"></i> Multi-Brand Spare Parts Database</span>
+          <h1 style="font-size: 2.2rem; margin: 8px 0 6px;">All Car Brands & Industrial Spare Parts</h1>
+          <p style="color: var(--text-secondary); max-width: 650px;">
+            Filter and cross-match genuine and certified OEM replacement spare parts for all major car brands (Maruti, Hyundai, Tata, Mahindra, Toyota, Honda, Kia, VW, Skoda, BMW, Mercedes, Audi, Ford, Renault, Nissan) and industrial equipment.
+          </p>
+        </div>
+        <div id="catalogResultCount" style="font-family: var(--font-mono); font-size: 1.1rem; color: var(--accent-cyan); font-weight: 700; background: rgba(0,229,255,0.1); padding: 8px 16px; border-radius: var(--radius-md); border: 1px solid rgba(0,229,255,0.3);">
+          Loading parts...
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Catalog Content Layout with Faceted Sidebar -->
+  <div class="container" style="margin-bottom: 80px;">
+    <div class="catalog-layout">
+      <!-- Faceted Sidebar -->
+      <aside class="filter-sidebar">
+        <div class="sidebar-header">
+          <h3><i class="fa-solid fa-filter" style="color: var(--accent-cyan);"></i> Filter Catalog</h3>
+          <button id="resetFiltersBtn" class="btn" style="padding: 4px 8px; font-size: 0.75rem; background: rgba(255,255,255,0.06); color: var(--text-muted);">
+            Reset All
+          </button>
+        </div>
+
+        <!-- Keyword Search Filter -->
+        <div class="filter-section">
+          <h4>Search By Keywords</h4>
+          <div style="display: flex; gap: 6px;">
+            <input type="text" id="catalogSearchInput" class="form-control" placeholder="Part number, model, brand...">
+            <button id="catalogSearchBtn" class="btn btn-primary" style="padding: 0 12px;"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
+        </div>
+
+        <!-- Categories Radio Filter -->
+        <div class="filter-section">
+          <h4>Spare Part Category</h4>
+          <div class="filter-radio-list" id="filterCategoriesList">
+            <!-- Populated dynamically via catalog.js -->
+          </div>
+        </div>
+
+        <!-- OEM Manufacturer Dropdown -->
+        <div class="filter-section">
+          <h4>Car Brand / Manufacturer</h4>
+          <select id="filterManufacturerSelect" class="form-control">
+            <option value="all">All Brands & Manufacturers</option>
+          </select>
+        </div>
+
+        <!-- Specific Turbine / Car Model Dropdown -->
+        <div class="filter-section">
+          <h4>Vehicle / Machine Model</h4>
+          <select id="filterModelSelect" class="form-control">
+            <option value="all">All Models</option>
+          </select>
+        </div>
+
+        <!-- Component Section Dropdown -->
+        <div class="filter-section">
+          <h4>Component System</h4>
+          <select id="filterSectionSelect" class="form-control">
+            <option value="all">All Systems</option>
+            <option value="brakes">Brakes & Hydraulics</option>
+            <option value="engine">Engine, Timing & Turbo</option>
+            <option value="suspension">Suspension & Steering</option>
+            <option value="intake">Air Intake & Filtration</option>
+            <option value="transmission">Transmission & Clutch</option>
+            <option value="electrical">Electrical & Lighting</option>
+            <option value="cooling">Cooling & Air Conditioning</option>
+            <option value="body">Body & Mirrors</option>
+            <option value="turbine">Industrial Turbines</option>
+          </select>
+        </div>
+
+        <!-- In-Stock Checkbox -->
+        <div class="filter-section" style="padding-top: 14px; border-top: 1px solid var(--border-light);">
+          <label class="filter-checkbox-label">
+            <input type="checkbox" id="filterInStock">
+            <span>In-Stock Ready for 24h Dispatch</span>
+          </label>
+        </div>
+      </aside>
+
+      <!-- Main Products Browser Area -->
+      <main>
+        <!-- Horizontal Car Brand Quick Selector Bar -->
+        <div class="catalog-brand-pills-bar" id="catalogBrandPillsBar">
+          <button class="brand-filter-pill active" data-mfr="all"><i class="fa-solid fa-layer-group"></i> All Brands</button>
+          <button class="brand-filter-pill" data-mfr="Maruti Suzuki"><i class="fa-solid fa-car-side"></i> Maruti Suzuki</button>
+          <button class="brand-filter-pill" data-mfr="Hyundai"><i class="fa-solid fa-car"></i> Hyundai</button>
+          <button class="brand-filter-pill" data-mfr="Tata Motors"><i class="fa-solid fa-truck-monster"></i> Tata Motors</button>
+          <button class="brand-filter-pill" data-mfr="Mahindra"><i class="fa-solid fa-mountain"></i> Mahindra</button>
+          <button class="brand-filter-pill" data-mfr="Toyota"><i class="fa-solid fa-shield-halved"></i> Toyota</button>
+          <button class="brand-filter-pill" data-mfr="Honda"><i class="fa-solid fa-gauge-high"></i> Honda</button>
+          <button class="brand-filter-pill" data-mfr="Kia"><i class="fa-solid fa-bolt"></i> Kia</button>
+          <button class="brand-filter-pill" data-mfr="Volkswagen"><i class="fa-solid fa-gears"></i> Volkswagen</button>
+          <button class="brand-filter-pill" data-mfr="Skoda"><i class="fa-solid fa-feather-pointed"></i> Skoda</button>
+          <button class="brand-filter-pill" data-mfr="BMW"><i class="fa-solid fa-crown"></i> BMW</button>
+          <button class="brand-filter-pill" data-mfr="Mercedes-Benz"><i class="fa-solid fa-star"></i> Mercedes-Benz</button>
+          <button class="brand-filter-pill" data-mfr="Audi"><i class="fa-solid fa-ring"></i> Audi</button>
+          <button class="brand-filter-pill" data-mfr="Ford"><i class="fa-solid fa-compass"></i> Ford</button>
+          <button class="brand-filter-pill" data-mfr="Renault"><i class="fa-solid fa-gem"></i> Renault</button>
+          <button class="brand-filter-pill" data-mfr="Nissan"><i class="fa-solid fa-circle-dot"></i> Nissan</button>
+          <button class="brand-filter-pill" data-mfr="GE Vernova"><i class="fa-solid fa-industry"></i> Industrial Turbines</button>
+        </div>
+
+        <!-- Sort / View Mode Bar -->
+        <div class="catalog-filter-bar" style="margin-bottom: 24px;">
+          <div style="font-size: 0.88rem; color: var(--text-secondary);">
+            <i class="fa-solid fa-circle-check" style="color: var(--accent-cyan);"></i> Guaranteed Interchangeability & 100% Fitment Quality
+          </div>
+
+          <div class="catalog-sort-wrap">
+            <label for="catalogSortSelect">Sort by:</label>
+            <select id="catalogSortSelect">
+              <option value="popular">Recommended</option>
+              <option value="price-asc">Price: Low to High (₹)</option>
+              <option value="price-desc">Price: High to Low (₹)</option>
+              <option value="stock-desc">Stock Quantity</option>
+              <option value="name-asc">Part Name (A-Z)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid" id="catalogProductsGrid">
+          <!-- Populated via catalog.js -->
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Cart Drawer -->
+  <div class="cart-drawer-overlay" id="cartOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <div class="cart-drawer-title"><i class="fa-solid fa-cart-flatbed" style="color: var(--accent-cyan);"></i> Procurement Cart</div>
+      <button class="close-btn" id="cartCloseBtn">&times;</button>
+    </div>
+    <div class="cart-items-body" id="cartItemsList"></div>
+    <div class="cart-drawer-footer">
+      <div class="cart-totals-row"><span>Component Subtotal:</span><strong id="cartSubtotal" class="mono">₹0.00</strong></div>
+      <div class="cart-totals-row"><span>Freight:</span><strong id="cartFreight" class="mono">₹0.00</strong></div>
+      <div class="cart-totals-row grand-total"><span>Estimated Total:</span><strong id="cartGrandTotal" class="mono" style="color: var(--accent-cyan);">₹0.00</strong></div>
+      <div class="cart-footer-actions">
+        <button id="cartCheckoutBtn" class="btn btn-primary" style="width: 100%;"><i class="fa-solid fa-lock"></i> Direct B2B Purchase Order (PO)</button>
+        <button id="cartRfqBtn" class="btn btn-amber" style="width: 100%;"><i class="fa-solid fa-file-invoice"></i> Convert to Formal RFQ Quotation</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 TurbineTek International GmbH. All Rights Reserved. Major Project Submission.</div>
+        <div style="display: flex; gap: 20px;">
+          <span>DIN EN ISO 9001:2015</span>
+          <span>CE Conformity</span>
+          <span>EN 10204 3.1 Traceability</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/api.js"></script>
+  <script src="/js/cart.js"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/catalog.js"></script>
+</body>
+</html>

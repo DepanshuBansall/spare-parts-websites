@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Plant Fleet | Equipment Manager | TurbineTek</title>
+  <meta name="description" content="Register your power plant gas turbines and engines to automatically monitor maintenance intervals and isolate 100% compatible spare parts.">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300E5FF'><path d='M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14.93V17a1 1 0 0 1-2 0v-.07A6 6 0 0 1 6.07 12H7a1 1 0 0 1 0-2h-.93A6 6 0 0 1 11 5.07V6a1 1 0 0 1 2 0v-.93A6 6 0 0 1 17.93 10H17a1 1 0 0 1 0 2h.93A6 6 0 0 1 13 16.93z'/></svg>">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Ticker -->
+  <div class="top-ticker">
+    <div class="container top-ticker-content">
+      <div class="ticker-badges">
+        <div class="ticker-item"><i class="fa-solid fa-shield-halved"></i> <span><strong>DIN EN ISO 9001:2015</strong> Certified</span></div>
+        <div class="ticker-item"><i class="fa-solid fa-plane-departure"></i> <span><strong>AOG Express Freight</strong> 24/48h</span></div>
+      </div>
+      <div class="ticker-actions">
+        <a href="/fleet.html" class="ticker-link" style="color: var(--accent-cyan); font-weight: 600;"><i class="fa-solid fa-industry"></i> My Plant Fleet</a>
+        <a href="/admin.html" class="ticker-link"><i class="fa-solid fa-sliders"></i> Admin Portal</a>
+        <a href="/rfq.html" class="ticker-link" style="color: var(--accent-amber);"><i class="fa-solid fa-file-signature"></i> B2B RFQ Tender</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="container navbar">
+      <a href="/" class="brand-logo">
+        <div class="brand-icon-wrap"><i class="fa-solid fa-fan"></i></div>
+        <div>TURBINE<span class="highlight">TEK</span><span class="brand-tagline">Power Plant Spare Parts</span></div>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="/" class="nav-link"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="/catalog.html" class="nav-link"><i class="fa-solid fa-boxes-stacked"></i> Catalog</a></li>
+        <li><a href="/fleet.html" class="nav-link active"><i class="fa-solid fa-industry"></i> Plant Fleet</a></li>
+        <li><a href="/rfq.html" class="nav-link"><i class="fa-solid fa-file-invoice"></i> RFQs <span class="nav-badge-pill">B2B</span></a></li>
+        <li><a href="/admin.html" class="nav-link" style="color: var(--accent-amber);"><i class="fa-solid fa-lock"></i> Admin</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="cartTriggerBtn" title="Procurement Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <div class="catalog-page-header">
+    <div class="container">
+      <span class="section-tag"><i class="fa-solid fa-industry"></i> Power Plant Asset Management</span>
+      <h1 style="font-size: 2.2rem; margin: 8px 0 6px;">"My Plant Fleet" Equipment Registry</h1>
+      <p style="color: var(--text-secondary); max-width: 650px;">
+        Register your plant's operating gas turbines, steam turbines, and cogeneration engines. TurbineTek automatically curates matched overhaul kits, consumable parts, and scheduled maintenance spares for each machine.
+      </p>
+    </div>
+  </div>
+
+  <div class="container" style="margin-bottom: 80px;">
+    <!-- Add New Equipment Form Card -->
+    <div class="finder-card" style="margin-top: 0; margin-bottom: 50px;">
+      <h3 style="font-size: 1.3rem; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+        <i class="fa-solid fa-plus-circle" style="color: var(--accent-cyan);"></i> Register New Machine to Plant Fleet
+      </h3>
+
+      <form id="addFleetForm">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 16px;">
+          <div>
+            <label style="display: block; font-size: 0.78rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; font-weight: 600;">Plant / Unit Name *</label>
+            <input type="text" name="plantName" class="form-control" required placeholder="e.g. Apex Station Unit 3">
+          </div>
+          <div>
+            <label style="display: block; font-size: 0.78rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; font-weight: 600;">Equipment Type *</label>
+            <select name="turbineType" id="fleetTypeSelect" class="form-control" required>
+              <option value="">Loading machine types...</option>
+            </select>
+          </div>
+          <div>
+            <label style="display: block; font-size: 0.78rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; font-weight: 600;">OEM Manufacturer *</label>
+            <select name="manufacturer" id="fleetMfrSelect" class="form-control" required>
+              <option value="">-- First Select Type --</option>
+            </select>
+          </div>
+          <div>
+            <label style="display: block; font-size: 0.78rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; font-weight: 600;">Machine Model *</label>
+            <select name="model" id="fleetModelSelect" class="form-control" required>
+              <option value="">-- First Select Manufacturer --</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) 160px; gap: 16px; align-items: end;">
+          <div>
+            <label style="display: block; font-size: 0.78rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; font-weight: 600;">Turbine Serial Number</label>
+            <input type="text" name="serialNumber" class="form-control" placeholder="e.g. GE-LM25-9014">
+          </div>
+          <div>
+            <label style="display: block; font-size: 0.78rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; font-weight: 600;">Current Operating Hours</label>
+            <input type="number" name="operatingHours" class="form-control" placeholder="e.g. 28500">
+          </div>
+          <div>
+            <label style="display: block; font-size: 0.78rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; font-weight: 600;">Commission Year</label>
+            <input type="number" name="commissionYear" class="form-control" value="2019">
+          </div>
+          <div>
+            <label style="display: block; font-size: 0.78rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; font-weight: 600;">Target Major Overhaul</label>
+            <input type="date" name="nextOverhaul" class="form-control">
+          </div>
+          <div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; height: 46px;">
+              <i class="fa-solid fa-save"></i> Register Unit
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Registered Plant Fleet Grid -->
+    <div>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+        <h3 style="font-size: 1.4rem; display: flex; align-items: center; gap: 10px;">
+          <i class="fa-solid fa-shield-halved" style="color: var(--accent-cyan);"></i> Active Registered Power Assets
+        </h3>
+        <span style="font-size: 0.85rem; color: var(--text-secondary);">Direct 1-Click Spare Match Enabled</span>
+      </div>
+
+      <div class="products-grid" id="fleetCardsGrid">
+        <!-- Rendered by fleet.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide-out Cart Drawer -->
+  <div class="cart-drawer-overlay" id="cartOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <div class="cart-drawer-title"><i class="fa-solid fa-cart-flatbed" style="color: var(--accent-cyan);"></i> Procurement Cart</div>
+      <button class="close-btn" id="cartCloseBtn">&times;</button>
+    </div>
+    <div class="cart-items-body" id="cartItemsList"></div>
+    <div class="cart-drawer-footer">
+      <div class="cart-totals-row"><span>Component Subtotal:</span><strong id="cartSubtotal" class="mono">$0.00</strong></div>
+      <div class="cart-totals-row"><span>Freight:</span><strong id="cartFreight" class="mono">$0.00</strong></div>
+      <div class="cart-totals-row grand-total"><span>Estimated Total:</span><strong id="cartGrandTotal" class="mono" style="color: var(--accent-cyan);">$0.00</strong></div>
+      <div class="cart-footer-actions">
+        <button id="cartCheckoutBtn" class="btn btn-primary" style="width: 100%;"><i class="fa-solid fa-lock"></i> Direct B2B Purchase Order (PO)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 TurbineTek International GmbH. All Rights Reserved. Major Project Submission.</div>
+        <div style="display: flex; gap: 20px;">
+          <span>DIN EN ISO 9001:2015</span>
+          <span>CE Conformity</span>
+          <span>EN 10204 3.1 Traceability</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/api.js"></script>
+  <script src="/js/cart.js"></script>
+  <script src="/js/fleet.js"></script>
+</body>
+</html>

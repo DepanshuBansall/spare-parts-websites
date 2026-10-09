@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin & Logistics Center | TurbineTek</title>
+  <meta name="description" content="TurbineTek central operations dashboard for inventory management, RFQ tender processing, and order fulfillment.">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300E5FF'><path d='M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14.93V17a1 1 0 0 1-2 0v-.07A6 6 0 0 1 6.07 12H7a1 1 0 0 1 0-2h-.93A6 6 0 0 1 11 5.07V6a1 1 0 0 1 2 0v-.93A6 6 0 0 1 17.93 10H17a1 1 0 0 1 0 2h.93A6 6 0 0 1 13 16.93z'/></svg>">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Ticker -->
+  <div class="top-ticker">
+    <div class="container top-ticker-content">
+      <div class="ticker-badges">
+        <div class="ticker-item"><i class="fa-solid fa-lock" style="color: var(--accent-amber);"></i> <span><strong>Administrator Console</strong> • Secure Session</span></div>
+        <div class="ticker-item"><i class="fa-solid fa-server"></i> <span><strong>Node.js & Express REST Backend</strong> Active</span></div>
+      </div>
+      <div class="ticker-actions">
+        <a href="/" class="ticker-link"><i class="fa-solid fa-arrow-left"></i> Return to Storefront</a>
+        <a href="/catalog.html" class="ticker-link">Public Catalog</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="container navbar">
+      <a href="/" class="brand-logo">
+        <div class="brand-icon-wrap" style="background: linear-gradient(135deg, #F59E0B, #D97706);"><i class="fa-solid fa-sliders" style="color: #000;"></i></div>
+        <div>TURBINE<span class="highlight">TEK</span><span class="brand-tagline" style="color: #F59E0B;">Operations Center</span></div>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="/" class="nav-link"><i class="fa-solid fa-house"></i> Storefront</a></li>
+        <li><a href="/catalog.html" class="nav-link"><i class="fa-solid fa-boxes-stacked"></i> Catalog</a></li>
+        <li><a href="/fleet.html" class="nav-link"><i class="fa-solid fa-industry"></i> Plant Fleet</a></li>
+        <li><a href="/rfq.html" class="nav-link"><i class="fa-solid fa-file-invoice"></i> RFQs</a></li>
+        <li><a href="/admin.html" class="nav-link active" style="color: var(--accent-amber);"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <button id="openAddProductBtn" class="btn btn-primary" style="font-size: 0.85rem;">
+          <i class="fa-solid fa-plus-circle"></i> Add Spare Part
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <div class="catalog-page-header" style="background: linear-gradient(180deg, rgba(20, 15, 30, 0.9) 0%, rgba(7, 11, 25, 0.9) 100%);">
+    <div class="container">
+      <span class="section-tag" style="color: var(--accent-amber);"><i class="fa-solid fa-gauge-high"></i> Enterprise Telemetry</span>
+      <h1 style="font-size: 2.2rem; margin: 8px 0 6px;">Operations, Inventory & RFQ Command Hub</h1>
+      <p style="color: var(--text-secondary); max-width: 650px;">
+        Monitor real-time inventory valuations, process incoming commercial quotation inquiries, fulfill purchase orders, and calibrate part stock levels.
+      </p>
+    </div>
+  </div>
+
+  <div class="container" style="margin-bottom: 80px;">
+    <!-- KPI Analytics Cards Grid -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-bottom: 36px;">
+      <div class="finder-card" style="margin: 0; padding: 20px;">
+        <div style="font-size: 0.78rem; text-transform: uppercase; color: var(--text-muted); font-weight: 600; margin-bottom: 6px;">Total Catalog Parts</div>
+        <div id="statTotalProducts" style="font-size: 2.2rem; font-weight: 800; font-family: var(--font-display); color: var(--accent-cyan); line-height: 1;">--</div>
+        <div style="font-size: 0.8rem; color: #34D399; margin-top: 8px;"><i class="fa-solid fa-arrow-trend-up"></i> Live Synchronized</div>
+      </div>
+
+      <div class="finder-card" style="margin: 0; padding: 20px;">
+        <div style="font-size: 0.78rem; text-transform: uppercase; color: var(--text-muted); font-weight: 600; margin-bottom: 6px;">Total Inventory Valuation</div>
+        <div id="statInventoryValue" style="font-size: 2.2rem; font-weight: 800; font-family: var(--font-display); color: #FFF; line-height: 1;">₹--</div>
+        <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 8px;">Warehouse Hubs Asset Value</div>
+      </div>
+
+      <div class="finder-card" style="margin: 0; padding: 20px;">
+        <div style="font-size: 0.78rem; text-transform: uppercase; color: var(--text-muted); font-weight: 600; margin-bottom: 6px;">Commercial Sales Volume</div>
+        <div id="statTotalRevenue" style="font-size: 2.2rem; font-weight: 800; font-family: var(--font-display); color: var(--accent-amber); line-height: 1;">₹--</div>
+        <div style="font-size: 0.8rem; color: #34D399; margin-top: 8px;"><span id="statTotalOrders">--</span> Orders Processed</div>
+      </div>
+
+      <div class="finder-card" style="margin: 0; padding: 20px;">
+        <div style="font-size: 0.78rem; text-transform: uppercase; color: var(--text-muted); font-weight: 600; margin-bottom: 6px;">B2B Quotation Tenders</div>
+        <div id="statTotalRfqs" style="font-size: 2.2rem; font-weight: 800; font-family: var(--font-display); color: #38BDF8; line-height: 1;">--</div>
+        <div id="statPendingRfqs" style="font-size: 0.8rem; color: var(--accent-amber); font-weight: 600; margin-top: 8px;">-- Action Required</div>
+      </div>
+    </div>
+
+    <!-- Category Distribution & Inventory Breakdown -->
+    <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 24px; margin-bottom: 40px;">
+      <div class="finder-card" style="margin: 0; padding: 24px;">
+        <h4 style="font-size: 1.1rem; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-chart-pie" style="color: var(--accent-cyan);"></i> Stock by Category
+        </h4>
+        <div id="adminCategoryDistribution">
+          <!-- Rendered via admin.js -->
+        </div>
+      </div>
+
+      <div class="finder-card" style="margin: 0; padding: 24px;">
+        <h4 style="font-size: 1.1rem; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-truck-ramp-box" style="color: var(--accent-cyan);"></i> Live Purchase Orders Fulfillment
+        </h4>
+        <div style="overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem;">
+            <thead>
+              <tr style="border-bottom: 1px solid var(--border-light); color: var(--text-muted); text-align: left;">
+                <th style="padding: 8px;">PO Number</th>
+                <th style="padding: 8px;">Client Organization</th>
+                <th style="padding: 8px;">Items</th>
+                <th style="padding: 8px;">Amount</th>
+                <th style="padding: 8px;">Logistics State</th>
+                <th style="padding: 8px; text-align: right;">Status</th>
+              </tr>
+            </thead>
+            <tbody id="adminOrdersTbody">
+              <!-- Rendered via admin.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Incoming RFQs Tenders Management -->
+    <div class="finder-card" style="margin: 0 0 40px 0; padding: 24px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px;">
+        <h3 style="font-size: 1.25rem; display: flex; align-items: center; gap: 10px;">
+          <i class="fa-solid fa-file-invoice" style="color: var(--accent-amber);"></i> B2B Customer RFQ Inquiries & Quotation Approvals
+        </h3>
+        <span style="font-size: 0.8rem; color: var(--text-muted);">Change status dropdown to send formal quotation</span>
+      </div>
+
+      <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem;">
+          <thead>
+            <tr style="border-bottom: 1px solid var(--border-light); color: var(--text-muted); text-align: left;">
+              <th style="padding: 10px;">RFQ Ref</th>
+              <th style="padding: 10px;">Customer / Plant Entity</th>
+              <th style="padding: 10px;">Machine Model</th>
+              <th style="padding: 10px;">Total Quotation</th>
+              <th style="padding: 10px;">Status Workflow</th>
+              <th style="padding: 10px; text-align: right;">Formal Document</th>
+            </tr>
+          </thead>
+          <tbody id="adminRfqsTbody">
+            <!-- Rendered via admin.js -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Inventory CRUD Table -->
+    <div class="finder-card" style="margin: 0; padding: 24px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; flex-wrap: wrap; gap: 12px;">
+        <div>
+          <h3 style="font-size: 1.25rem; display: flex; align-items: center; gap: 10px;">
+            <i class="fa-solid fa-boxes-stacked" style="color: var(--accent-cyan);"></i> Live Warehouse Parts Inventory Management
+          </h3>
+          <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Click 'Edit' to quickly modify prices and stock levels, or remove obsolete items.</p>
+        </div>
+        <button onclick="document.getElementById('addProductModal').classList.add('active')" class="btn btn-primary" style="font-size: 0.85rem;">
+          <i class="fa-solid fa-plus"></i> Add New Part to Catalog
+        </button>
+      </div>
+
+      <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem;">
+          <thead>
+            <tr style="border-bottom: 1px solid var(--border-light); color: var(--text-muted); text-align: left;">
+              <th style="padding: 10px; width: 140px;">Part Number</th>
+              <th style="padding: 10px;">Description & OEM Reference</th>
+              <th style="padding: 10px; width: 140px;">Category</th>
+              <th style="padding: 10px; width: 120px;">Net Price</th>
+              <th style="padding: 10px; width: 110px;">Available Stock</th>
+              <th style="padding: 10px; width: 140px; text-align: right;">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="adminInventoryTbody">
+            <!-- Rendered via admin.js -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Product Modal -->
+  <div class="modal-backdrop" id="addProductModal">
+    <div class="modal-window" style="max-width: 680px;">
+      <div class="modal-header">
+        <h3 style="font-size: 1.2rem; display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-plus-circle" style="color: var(--accent-cyan);"></i> Add New Spare Part to Inventory
+        </h3>
+        <button class="close-btn" onclick="document.getElementById('addProductModal').classList.remove('active')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="addProductForm" style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 12px;">
+            <div>
+              <label style="display: block; font-size: 0.8rem; font-weight: 600; margin-bottom: 4px;">Part Name *</label>
+              <input type="text" name="name" class="form-control" required placeholder="e.g. Stage 1 HP Turbine Rotor Blade">
+            </div>
+            <div>
+              <label style="display: block; font-size: 0.8rem; font-weight: 600; margin-bottom: 4px;">TurbineTek P/N *</label>
+              <input type="text" name="partNumber" class="form-control" required placeholder="TT-BLD-9901">
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;">
+            <div>
+              <label style="display: block; font-size: 0.8rem; font-weight: 600; margin-bottom: 4px;">Category *</label>
+              <select name="category" class="form-control" required>
+                <option value="blades-vanes">Blades & Vanes</option>
+                <option value="ignition-electrical">Ignition & Electrical</option>
+                <option value="filtration-systems">Filtration Systems</option>
+                <option value="sensors-instrumentation">Sensors & Instrumentation</option>
+                <option value="fuel-valves">Fuel Valves & Actuators</option>
+                <option value="seals-gaskets-bearings">Seals & Gaskets</option>
+              </select>
+            </div>
+            <div>
+              <label style="display: block; font-size: 0.8rem; font-weight: 600; margin-bottom: 4px;">OEM Manufacturer</label>
+              <input type="text" name="oemManufacturer" class="form-control" placeholder="GE / Siemens / Solar...">
+            </div>
+            <div>
+              <label style="display: block; font-size: 0.8rem; font-weight: 600; margin-bottom: 4px;">OEM Part No</label>
+              <input type="text" name="oemPartNumber" class="form-control" placeholder="e.g. 314A5600P001">
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;">
+            <div>
+              <label style="display: block; font-size: 0.8rem; font-weight: 600; margin-bottom: 4px;">Vehicle / Turbine Section</label>
+              <select name="turbineSection" class="form-control">
+                <option value="brakes">Brakes & Hydraulics</option>
+                <option value="engine">Engine & Timing</option>
+                <option value="suspension">Suspension & Steering</option>
+                <option value="transmission">Transmission & Clutch</option>
+                <option value="electrical">Electrical & Sensors</option>
+                <option value="cooling">Cooling & AC</option>
+                <option value="body">Body & Mirrors</option>
+                <option value="intake">Air Intake & Filtration</option>
+                <option value="turbine">Industrial Turbine Stages</option>
+                <option value="exhaust">Exhaust System</option>
+              </select>
+            </div>
+            <div>
+              <label style="display: block; font-size: 0.8rem; font-weight: 600; margin-bottom: 4px;">Net Price (₹ INR) *</label>
+              <input type="number" step="1" name="price" class="form-control" required placeholder="3500">
+            </div>
+            <div>
+              <label style="display: block; font-size: 0.8rem; font-weight: 600; margin-bottom: 4px;">Initial Stock Units *</label>
+              <input type="number" name="stock" class="form-control" required value="10">
+            </div>
+          </div>
+
+          <div>
+            <label style="display: block; font-size: 0.8rem; font-weight: 600; margin-bottom: 4px;">Compatible Turbines (comma-separated)</label>
+            <input type="text" name="compatibleTurbines" class="form-control" placeholder="LM2500, SGT-400, Taurus 60">
+          </div>
+
+          <div>
+            <label style="display: block; font-size: 0.8rem; font-weight: 600; margin-bottom: 4px;">Image Asset</label>
+            <select name="image" class="form-control">
+              <option value="/images/blade.jpg">Turbine Rotor Blade Image</option>
+              <option value="/images/sparkplug.jpg">Industrial Spark Plug Image</option>
+              <option value="/images/filter.jpg">Industrial Filter Cartridge Image</option>
+              <option value="/images/sensor.jpg">High-Temp Sensor Image</option>
+              <option value="/images/valve.jpg">Electro-Hydraulic Valve Image</option>
+              <option value="/images/hero.jpg">Mechanical Seal & Rotor Image</option>
+            </select>
+          </div>
+
+          <div>
+            <label style="display: block; font-size: 0.8rem; font-weight: 600; margin-bottom: 4px;">Technical Summary Description</label>
+            <textarea name="shortDesc" rows="2" class="form-control" placeholder="Engineering grade material, thermal coating, and application notes."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="margin-top: 10px;">
+            <i class="fa-solid fa-save"></i> Save Component to Catalog Database
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 TurbineTek International GmbH. All Rights Reserved. Major Project Submission.</div>
+        <div style="display: flex; gap: 20px;">
+          <span>DIN EN ISO 9001:2015</span>
+          <span>CE Conformity</span>
+          <span>Node.js v24 • Express REST API</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/api.js"></script>
+  <script src="/js/cart.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>
