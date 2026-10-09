@@ -1,0 +1,156 @@
+[
+  {
+    "id": "maruti-suzuki",
+    "name": "Maruti Suzuki",
+    "category": "Car Brand (Passenger Vehicles)",
+    "country": "India / Japan",
+    "popularModels": ["Swift", "Baleno", "Brezza", "Dzire", "Ertiga", "Grand Vitara", "Fronx", "Wagon R", "Jimny"]
+  },
+  {
+    "id": "hyundai",
+    "name": "Hyundai",
+    "category": "Car Brand (Passenger Vehicles)",
+    "country": "South Korea",
+    "popularModels": ["Creta", "i20", "Verna", "Venue", "Exter", "Alcazar", "Tucson", "Grand i10 Nios"]
+  },
+  {
+    "id": "tata-motors",
+    "name": "Tata Motors",
+    "category": "Car Brand (Passenger & EV)",
+    "country": "India",
+    "popularModels": ["Nexon", "Harrier", "Safari", "Punch", "Altroz", "Tiago", "Tigor", "Curvv"]
+  },
+  {
+    "id": "mahindra",
+    "name": "Mahindra & Mahindra",
+    "category": "Car Brand (SUVs & 4x4)",
+    "country": "India",
+    "popularModels": ["Scorpio-N", "Scorpio Classic", "Thar 4x4", "Thar Roxx", "XUV700", "XUV300", "XUV 3XO", "Bolero"]
+  },
+  {
+    "id": "toyota",
+    "name": "Toyota",
+    "category": "Car Brand (Passenger & Utility)",
+    "country": "Japan",
+    "popularModels": ["Innova Crysta", "Innova Hycross", "Fortuner", "Urban Cruiser Hyryder", "Glanza", "Hilux", "Camry"]
+  },
+  {
+    "id": "honda",
+    "name": "Honda Cars",
+    "category": "Car Brand (Sedans & SUVs)",
+    "country": "Japan",
+    "popularModels": ["City (Gen 5)", "City (Gen 4)", "Amaze", "Elevate", "Civic", "CR-V", "Jazz"]
+  },
+  {
+    "id": "kia",
+    "name": "Kia",
+    "category": "Car Brand (SUVs & MPVs)",
+    "country": "South Korea",
+    "popularModels": ["Seltos", "Sonet", "Carens", "EV6", "Carnival"]
+  },
+  {
+    "id": "volkswagen",
+    "name": "Volkswagen",
+    "category": "Car Brand (German Engineering)",
+    "country": "Germany",
+    "popularModels": ["Polo GT", "Virtus", "Taigun", "Vento", "Tiguan", "Passat", "Jetta"]
+  },
+  {
+    "id": "skoda",
+    "name": "Skoda Auto",
+    "category": "Car Brand (European Sedans & SUVs)",
+    "country": "Czech Republic / Germany",
+    "popularModels": ["Kushaq", "Slavia", "Octavia", "Superb", "Kodiaq", "Rapid"]
+  },
+  {
+    "id": "bmw",
+    "name": "BMW",
+    "category": "Car Brand (Luxury & Performance)",
+    "country": "Germany",
+    "popularModels": ["3 Series (G20/F30)", "5 Series (G30)", "X1", "X3", "X5", "7 Series", "M3 / M4"]
+  },
+  {
+    "id": "mercedes-benz",
+    "name": "Mercedes-Benz",
+    "category": "Car Brand (Luxury Vehicles)",
+    "country": "Germany",
+    "popularModels": ["C-Class (W205/W206)", "E-Class (W213/W214)", "GLA", "GLC", "GLE", "S-Class"]
+  },
+  {
+    "id": "audi",
+    "name": "Audi",
+    "category": "Car Brand (Luxury & Quattro)",
+    "country": "Germany",
+    "popularModels": ["A4", "A6", "Q3", "Q5", "Q7", "A3", "RS5"]
+  },
+  {
+    "id": "ford",
+    "name": "Ford",
+    "category": "Car Brand (SUVs & Trucks)",
+    "country": "United States",
+    "popularModels": ["EcoSport", "Endeavour", "Figo", "Aspire", "Mustang"]
+  },
+  {
+    "id": "renault",
+    "name": "Renault",
+    "category": "Car Brand (Crossovers & Compacts)",
+    "country": "France",
+    "popularModels": ["Kwid", "Kiger", "Triber", "Duster"]
+  },
+  {
+    "id": "nissan",
+    "name": "Nissan",
+    "category": "Car Brand (SUVs & Sedans)",
+    "country": "Japan",
+    "popularModels": ["Magnite", "Kicks", "Sunny", "Terrano", "X-Trail"]
+  },
+  {
+    "id": "bosch",
+    "name": "Bosch Automotive",
+    "category": "OEM Component Manufacturer",
+    "country": "Germany",
+    "popularModels": ["Brakes", "Wipers", "Spark Plugs", "Filters", "Alternators", "Batteries"]
+  },
+  {
+    "id": "brembo",
+    "name": "Brembo",
+    "category": "High Performance Brakes",
+    "country": "Italy",
+    "popularModels": ["Brake Pads", "Ventilated Rotors", "Brembo Caliper Kits"]
+  },
+  {
+    "id": "denso",
+    "name": "Denso Automotive",
+    "category": "OEM Spark Plugs, Radiators & AC",
+    "country": "Japan",
+    "popularModels": ["Iridium Power Plugs", "AC Compressors", "Starters", "Sensors"]
+  },
+  {
+    "id": "valeo",
+    "name": "Valeo",
+    "category": "OEM Clutch & Electrical Systems",
+    "country": "France",
+    "popularModels": ["Clutch Kits", "Flywheels", "Headlamps", "Starters"]
+  },
+  {
+    "id": "mann-filter",
+    "name": "Mann-Filter",
+    "category": "Premium German Filtration",
+    "country": "Germany",
+    "popularModels": ["Oil Filters", "Air Filters", "Cabin Pollen Filters", "Fuel Filters"]
+  },
+  {
+    "id": "ge-power",
+    "name": "GE Vernova / GE Power",
+    "category": "Industrial Power Turbines",
+    "country": "United States",
+    "popularModels": ["LM2500", "LM6000", "Frame 6B", "Frame 7EA"]
+  },
+  {
+    "id": "siemens-energy",
+    "name": "Siemens Energy",
+    "category": "Industrial Power Turbines",
+    "country": "Germany",
+    "popularModels": ["SGT-400", "SGT-700", "SGT-800"]
+  }
+]

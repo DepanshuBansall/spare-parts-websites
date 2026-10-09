@@ -1,0 +1,74 @@
+[
+  {
+    "id": "RFQ-2026-0891",
+    "createdAt": "2026-10-04T09:15:00.000Z",
+    "customer": {
+      "company": "Apex Power Generation LLC",
+      "contactName": "Marcus Vance (Plant Operations Chief)",
+      "email": "m.vance@apexpower.com",
+      "phone": "+91 98230 45678",
+      "country": "India / Global",
+      "plantLocation": "Gujarat Combined Cycle Station Unit 2"
+    },
+    "turbineModel": "GE LM2500+",
+    "requiredDelivery": "2026-10-25",
+    "urgency": "Urgent (Planned Maintenance Outage)",
+    "items": [
+      {
+        "productId": "TT-BLD-0101",
+        "name": "Stage 1 HP Gas Turbine Rotor Blade - Inconel 718 (TBC Coated)",
+        "quantity": 12,
+        "unitPrice": 320000.00,
+        "totalPrice": 3840000.00
+      },
+      {
+        "productId": "TT-SEN-0401",
+        "name": "High-Temp Turbine Vibration Sensor HT-100",
+        "quantity": 4,
+        "unitPrice": 125000.00,
+        "totalPrice": 500000.00
+      }
+    ],
+    "subtotal": 4340000.00,
+    "discount": 434000.00,
+    "estimatedTotal": 3906000.00,
+    "status": "Quote Sent",
+    "notes": "Fast-track air freight requested. EN 10204 3.1 inspection certificate required with shipment."
+  },
+  {
+    "id": "RFQ-2026-0892",
+    "createdAt": "2026-10-05T14:30:00.000Z",
+    "customer": {
+      "company": "Nordic BioGas Kraftwerke GmbH",
+      "contactName": "Dr. Jens Richter",
+      "email": "jens.richter@nordic-biogas.de",
+      "phone": "+49 40 8921 440",
+      "country": "Germany",
+      "plantLocation": "Hamburg CHP Facility #4"
+    },
+    "turbineModel": "INNIO Jenbacher JMS 320 GS",
+    "requiredDelivery": "2026-11-01",
+    "urgency": "Standard Stock Replenishment",
+    "items": [
+      {
+        "productId": "TT-SPK-0201",
+        "name": "Industrial Iridium Spark Plug GI3-1 (Pre-Chamber Gas Engine)",
+        "quantity": 96,
+        "unitPrice": 9500.00,
+        "totalPrice": 912000.00
+      },
+      {
+        "productId": "TT-FLT-0302",
+        "name": "High-Pressure Turbine Lube Oil Filter Element (Glass Fiber 3µm)",
+        "quantity": 20,
+        "unitPrice": 12000.00,
+        "totalPrice": 240000.00
+      }
+    ],
+    "subtotal": 1152000.00,
+    "discount": 57600.00,
+    "estimatedTotal": 1094400.00,
+    "status": "Reviewing",
+    "notes": "Bulk pricing tier requested for 96 plugs. Regular quarterly supply contract."
+  }
+]
